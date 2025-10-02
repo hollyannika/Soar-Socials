@@ -2,178 +2,204 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Soar Socials</title>
+  <title>SOAR SOCIALS</title>
   <style>
-    /* General Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    /* === Base Styling === */
     body {
       font-family: Arial, sans-serif;
-      background-color: #fff8dc; /* buttery yellow */
-      color: black;
-      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background: #FFF4B0; /* default buttery yellow */
     }
 
-    /* Navigation */
-    nav {
-      background: #fff8dc;
-      padding: 1rem 2rem;
+    /* === Header & Navigation === */
+    header {
+      background: #FFF4B0; /* buttery cream */
+      color: #FF0000;       /* red text */
+      padding: 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 2px solid #6b8e23;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
-    nav .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: red;
+    header h1 {
+      margin: 0;
+      font-size: 1.8em;
     }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    nav ul li a {
+    nav a {
+      margin-left: 15px;
       text-decoration: none;
-      color: black;
+      color: #FF0000;
       font-weight: bold;
     }
 
-    /* Home Section */
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* === Sections === */
+    section {
+      padding: 60px 20px;
+      min-height: 90vh;
+    }
+
+    /* === Home Section === */
     #home {
-      height: 100vh;
       background: repeating-linear-gradient(
-        90deg,
-        #fff8dc,
-        #fff8dc 15px,
-        #f7f0d4 15px,
-        #f7f0d4 30px
+        to right,           /* vertical stripes */
+        #ADD8E6,
+        #ADD8E6 1.5cm,
+        #808000 1.5cm,
+        #808000 3cm
       );
+      text-align: center;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
     }
 
-    #home h1 {
-      font-size: 6rem; /* bigger title */
-      color: red;
-      font-weight: bold;
+    #home h2 {
+      font-size: 5em;
+      color: #FF0000;
+      margin: 0 0 30px 0;
+      width: 100%;
     }
 
     #home p {
-      font-size: 1.5rem;
+      font-size: 1.5em;
+      color: #FF0000;
       max-width: 50%;
-      margin: 20px auto;
-      color: black; /* tagline is now black */
+      margin: 0 auto;
     }
 
-    /* About Me Heading */
-    .about-heading {
-      color: red;
-      font-size: 3.6rem; /* 20% bigger than before */
-      font-weight: bold;
-      text-shadow: 2px 2px 0px black;
-      transform: rotate(-10deg);
-      position: relative;
-      top: 20px;
-      left: 20px;
-      margin-bottom: -30px;
-    }
-
-    /* About Container */
-    .about-container {
+    /* === About Me Section === */
+    #about {
+      background: #FFF4B0;
       display: flex;
+      justify-content: center;
       align-items: flex-start;
-      background-color: #add8e6; /* light blue box */
-      border-left: 15px solid #6b8e23; /* olive ribbon left */
-      border-right: 15px solid #6b8e23; /* olive ribbon right */
-      padding: 40px;
-      margin: 40px auto;
-      max-width: 1000px;
+      padding: 80px 20px;
+      position: relative;
+    }
+
+    .about-box {
+      background: #ADD8E6; /* blue box */
+      border-left: 20px solid #808000;  /* olive ribbon left */
+      border-right: 20px solid #808000; /* olive ribbon right */
       border-radius: 10px;
+      padding: 40px;
+      max-width: 700px;
+      color: #000; /* black text */
+      position: relative;
     }
 
-    .about-text {
-      flex: 2;
-      color: black;
-      font-size: 1.1rem;
+    .about-box h2 {
+      position: absolute;
+      top: -30px;
+      left: 30px;
+      background: #FFF4B0;
+      color: #FF0000;
+      padding: 5px 15px;
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    .about-text p {
+      margin-bottom: 15px;
       line-height: 1.6;
-      padding-right: 20px;
     }
 
-    .about-image {
-      flex: 1;
+    .about img {
+      max-width: 250px;
+      border-radius: 10px;
+      margin-left: 40px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    /* === Projects Section === */
+    #projects {
+      background: #FFF4B0;
+    }
+
+    #projects h2 {
+      color: #FF0000;
       text-align: center;
     }
 
-    .about-image img {
-      max-width: 250px;
-      border-radius: 15px;
+    /* === Contact Section === */
+    #contact {
+      background: #FFF4B0;
+      text-align: center;
+    }
+
+    #contact h2 {
+      color: #FF0000;
     }
 
     footer {
-      text-align: center;
+      background: #FFF4B0;
       padding: 20px;
-      background: #6b8e23;
-      color: white;
+      text-align: center;
+      font-weight: bold;
+      color: #FF0000;
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <div class="logo">SOAR SOCIALS</div>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-    </ul>
-  </nav>
-
-  <!-- Home Section -->
-  <section id="home">
+  <!-- === Header === -->
+  <header>
     <h1>SOAR SOCIALS</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About Me</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- === Home Section === -->
+  <section id="home">
+    <h2>SOAR SOCIALS</h2>
     <p>Where your socials soar, not stall.</p>
   </section>
 
-  <!-- About Me Section -->
-  <section id="about">
-    <h2 class="about-heading">About me</h2>
-    <div class="about-container">
+  <!-- === About Me Section === -->
+  <section id="about" class="about">
+    <div class="about-box">
+      <h2>About Me</h2>
       <div class="about-text">
-        <p>
-          Hi, I’m Holly, the founder of Soar Socials. I help brands and creators cut through the noise, grow their online presence, and connect with the audiences that matter most.
-        </p>
-        <p>
-          With a degree in Multimedia Journalism and experience creating content that engages, informs, and inspires, I understand what makes people stop scrolling—and start clicking. 
-        </p>
-        <p>
-          With my passion for social media management I have challenged myself to create many mock campaigns (some of which you can check out by scrolling down to projects). Through this I have developed skills in social media strategy, content creation, and audience engagement—all of which I now bring to every client I work with.
-        </p>
-        <p>
-          At Soar Socials, my goal is simple: to help your brand take flight. Whether it’s crafting scroll-stopping posts, building a consistent brand story, or finding the best ways to reach your audience, I make sure your socials aren’t just seen—they’re remembered.
-        </p>
-        <p><strong>Let’s work together to make your brand soar.</strong></p>
-      </div>
-      <div class="about-image">
-        <img src="profile.jpg" alt="Photo of Holly">
+        <p>Hi, I’m Holly, the founder of Soar Socials. I help brands and creators cut through the noise, grow their online presence, and connect with the audiences that matter most.</p>
+        <p>With a degree in Multimedia Journalism and experience creating content that engages, informs, and inspires, I understand what makes people stop scrolling—and start clicking.</p>
+        <p>With my passion for social media management I have challenged myself to create many mock campaigns (some of which you can check out by scrolling down to projects). Through this I have developed skills in social media strategy, content creation, and audience engagement—all of which I now bring to every client I work with.</p>
+        <p>At Soar Socials, my goal is simple: to help your brand take flight. Whether it’s crafting scroll-stopping posts, building a consistent brand story, or finding the best ways to reach your audience, I make sure your socials aren’t just seen—they’re remembered.</p>
+        <p>Let’s work together to make your brand soar.</p>
       </div>
     </div>
+    <img src="profile.jpg" alt="Profile Picture">
   </section>
 
+  <!-- === Projects Section === -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <p style="text-align:center;">Add your project details here: client, date, brief description, and screenshots or images.</p>
+  </section>
+
+  <!-- === Contact Section === -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: you@example.com</p>
+    <p>LinkedIn: <a href="#">Your LinkedIn</a></p>
+  </section>
+
+  <!-- === Footer === -->
   <footer>
-    <p>© 2025 Soar Socials. All Rights Reserved.</p>
+    <p>SOAR SOCIALS © 2025</p>
   </footer>
 
 </body>
