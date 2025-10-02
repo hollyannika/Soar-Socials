@@ -2,261 +2,141 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your SMM Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <title>SOAR SOCIALS</title>
   <style>
-    /* General Reset & Font */
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
-    html { scroll-behavior: smooth; }
-
-    /* Colours */
-    :root {
-      --olive-green: #708238;
-      --powder-blue: #B0E0E6;
-      --butter-yellow: #FFF68F;
-      --red: #FF4B4B;
+    /* === Body & Background === */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: repeating-linear-gradient(
+        to right,           /* vertical stripes */
+        #ADD8E6,            /* powder blue stripe */
+        #ADD8E6 1.5cm,      /* stripe width */
+        #808000 1.5cm,      /* olive green stripe starts */
+        #808000 3cm          /* second stripe ends at 3cm, repeat */
+      );
     }
 
-    /* Header/Nav */
+    /* === Header & Navigation === */
     header {
-      position: fixed;
-      top: 0; left: 0; width: 100%;
-      background: var(--butter-yellow);
+      background: #FFF4B0;  /* lighter buttery cream */
+      color: #FF0000;       /* red text */
+      padding: 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
       z-index: 1000;
     }
 
     header h1 {
-      color: var(--red);
-      font-size: 1.8rem;
+      margin: 0;
+      font-size: 1.8em;
     }
 
     nav a {
-      margin-left: 1.5rem;
+      margin-left: 15px;
       text-decoration: none;
-      color: var(--red);
+      color: #FF0000;
       font-weight: bold;
-      transition: transform 0.2s;
     }
 
-    nav a:hover { transform: scale(1.1); }
+    nav a:hover {
+      text-decoration: underline;
+    }
 
+    /* === Sections === */
     section {
-      min-height: 100vh;
-      padding: 6rem 2rem 4rem;
+      padding: 50px;
+      min-height: 80vh;
     }
 
-    /* Home Section */
     #home {
-      background: repeating-linear-gradient(
-        45deg,
-        var(--powder-blue),
-        var(--powder-blue) 10px,
-        var(--olive-green) 10px,
-        var(--olive-green) 20px
-      );
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: var(--red);
-      font-size: 2rem;
-      flex-direction: column;
       text-align: center;
     }
 
-    /* About Me Section */
-    #about {
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-      justify-content: center;
-      background: var(--powder-blue);
-      color: var(--olive-green);
+    #home h2 {
+      font-size: 3em;
+      margin-bottom: 20px;
     }
 
-    #about .about-text {
-      width: 60%;
-      padding: 2rem;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    .about, .projects, #contact {
+      background: rgba(255,255,255,0.85); /* subtle white overlay for readability */
+      margin: 20px auto;
+      max-width: 1000px;
+      border-radius: 10px;
+      padding: 40px;
     }
 
-    #about img {
-      width: 300px;
-      border-radius: 50%;
+    .about img {
+      float: right;
+      margin-left: 20px;
+      max-width: 200px;
+      border-radius: 10px;
     }
 
-    /* What's in my Bag Section */
-    #bag {
-      background: var(--olive-green);
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 4rem 2rem;
-    }
-
-    .bag-animation {
-      position: relative;
-      width: 200px;
-      height: 200px;
-      margin-bottom: 2rem;
-    }
-
-    .bag-animation img {
-      position: absolute;
-      width: 50px;
-      transition: all 1s ease;
-    }
-
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-    }
-
-    .skill {
-      background: var(--butter-yellow);
-      color: var(--olive-green);
-      padding: 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
-
-    .skill:hover { transform: scale(1.1); }
-
-    /* Projects Section */
-    #projects {
-      background: var(--powder-blue);
-      color: var(--olive-green);
-      padding: 4rem 2rem;
-    }
-
-    .project {
-      background: #fff;
-      padding: 1rem;
-      margin-bottom: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-
-    .project img {
-      width: 100%;
-      margin-top: 1rem;
-      border-radius: 8px;
-    }
-
-    /* Qualifications Banner */
-    #qualifications {
-      background: var(--red);
-      color: #fff;
+    footer {
+      background: #FFF4B0; /* matching header */
+      padding: 20px;
       text-align: center;
-      padding: 2rem;
       font-weight: bold;
     }
 
-    /* Contact Section */
-    #contact {
-      background: var(--butter-yellow);
-      color: var(--red);
-      text-align: center;
-      padding: 4rem 2rem;
+    /* Clear floats */
+    .about::after {
+      content: "";
+      display: table;
+      clear: both;
     }
-
-    #contact a {
-      display: inline-block;
-      margin-top: 1rem;
-      color: var(--red);
-      text-decoration: none;
-      font-weight: bold;
-      transition: transform 0.2s;
-    }
-
-    #contact a:hover { transform: scale(1.1); }
-
   </style>
 </head>
 <body>
+
+  <!-- === Header === -->
   <header>
-    <h1>YourName</h1>
+    <h1>SOAR SOCIALS</h1>
     <nav>
       <a href="#home">Home</a>
       <a href="#about">About Me</a>
-      <a href="#bag">What's in My Bag</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
+  <!-- === Home Section === -->
   <section id="home">
-    <h2>Welcome to My SMM Portfolio</h2>
-    <p>Tagline goes here</p>
+    <h2>SOAR SOCIALS</h2>
+    <p>Where your socials soar, not stall.</p>
   </section>
 
-  <section id="about">
-    <div class="about-text">
-      <h2>About Me</h2>
-      <p>Write about yourself here...</p>
-    </div>
-    <img src="your-image.jpg" alt="Your Photo">
+  <!-- === About Me Section === -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <img src="profile.jpg" alt="Profile Picture">
+    <p>
+      Write a short intro about yourself here. You can include your experience, what makes you the right person to work with, and anything that shows off your skills.
+    </p>
   </section>
 
-  <section id="bag">
-    <h2>What's in My Bag</h2>
-    <div class="bag-animation">
-      <!-- Bag and items animation placeholders -->
-      <img src="bag.png" alt="Bag" style="top:0; left:75px;">
-      <img src="lipgloss.png" alt="Lipgloss" class="fall-item" style="top:-50px; left:20px;">
-      <img src="brush.png" alt="Hair Brush" class="fall-item" style="top:-50px; left:100px;">
-      <!-- Add more items -->
-    </div>
-    <div class="skills">
-      <div class="skill" title="Search Engine Optimization">SEO</div>
-      <div class="skill" title="Time Management & Optimization">Time Management</div>
-      <div class="skill" title="Communication & Collaboration">Communication</div>
-      <div class="skill" title="Audience Awareness & Analytics">Audience Awareness</div>
-      <div class="skill" title="Adaptability & Trend Awareness">Adaptability</div>
-      <div class="skill" title="Visual Storytelling">Visual Storytelling</div>
-      <div class="skill" title="Copy Writing">Copy Writing</div>
-    </div>
-  </section>
-
-  <section id="projects">
+  <!-- === Projects Section === -->
+  <section id="projects" class="projects">
     <h2>Projects</h2>
-    <div class="project">
-      <p>Client: [Name]</p>
-      <p>Date: [Date]</p>
-      <p>Project Brief: [Brief]</p>
-      <img src="project-screenshot.png" alt="Project Screenshot">
-    </div>
-    <!-- Repeat project divs as needed -->
+    <p>Add your project details here: client, date, brief description, and screenshots or images.</p>
   </section>
 
-  <section id="qualifications">
-    <p>Qualifications: [Your qualifications go here]</p>
-  </section>
-
+  <!-- === Contact Section === -->
   <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Email: yourname@example.com</p>
-    <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+    <h2>Contact</h2>
+    <p>Email: you@example.com</p>
+    <p>LinkedIn: <a href="#">Your LinkedIn</a></p>
   </section>
 
-  <script>
-    // Example JS for bag animation (simple fall)
-    const items = document.querySelectorAll('.fall-item');
-    items.forEach((item, index) => {
-      setTimeout(() => {
-        item.style.top = '200px';
-      }, index * 500);
-    });
-  </script>
+  <!-- === Footer === -->
+  <footer>
+    <p>SOAR SOCIALS © 2025</p>
+  </footer>
+
 </body>
 </html>
